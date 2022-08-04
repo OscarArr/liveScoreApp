@@ -2,11 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import LeagueTableView from './views/LeagueTable/LeagueTable';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <LeagueTableView></LeagueTableView>
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
