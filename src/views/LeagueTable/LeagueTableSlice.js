@@ -13,8 +13,8 @@ async () => {
     {  params: {
         locale: 'en_GB',
         standing_type: 'overall',
-        tournament_stage_id: 'C4LC0aVr',
-        tournament_season_id: 'tdkpynmB'
+        tournament_stage_id: '2XDiHi8l',
+        tournament_season_id: 'fe7Tj3F6'
     }})
     
     return leaguetable.data.DATA[0].ROWS
