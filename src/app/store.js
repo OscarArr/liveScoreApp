@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import tableReducer from '../views/LeagueTable/LeagueTableSlice'
+import teamReducer from '../views/TeamView/TeamSlice'
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    leagueTable: tableReducer
+    leagueTable: tableReducer,
+    team: teamReducer
   },
 });

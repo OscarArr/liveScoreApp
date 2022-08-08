@@ -8,17 +8,17 @@ const baseAxio = baseAxios
 // hämtar allsvenskan, för dynamik ändra i params. stage_id för byte av liga.
 export const fetchLeagueTable = createAsyncThunk(
   'table/fetchLeagueTable',
-async () => {
-    const leaguetable = await axios.get('tournaments/standings', 
-    {  params: {
-        locale: 'en_GB',
-        standing_type: 'overall',
-        tournament_stage_id: '2XDiHi8l',
-        tournament_season_id: 'fe7Tj3F6'
-    }})
-    
-    return leaguetable.data.DATA[0].ROWS
-}
+  async () => {
+      const leaguetable = await axios.get('tournaments/standings', 
+      {  params: {
+          locale: 'en_GB',
+          standing_type: 'overall',
+          tournament_stage_id: '2XDiHi8l',
+          tournament_season_id: 'fe7Tj3F6'
+      }})
+      // console.log(leaguetable.data.DATA[0].ROWS);
+      return leaguetable.data.DATA[0].ROWS
+  }
 )
 
 // export const getLeagueTable = createAsyncThunk(

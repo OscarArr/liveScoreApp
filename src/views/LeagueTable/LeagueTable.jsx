@@ -24,12 +24,14 @@ const LeagueTableView = () => {
   return (
     <table>
       <thead>
-        <StyledTd>Pos</StyledTd>
-        <StyledTd>Team</StyledTd>
-        <StyledTd>GP</StyledTd>
-        <StyledTd>GF/GA</StyledTd>
-        <StyledTd>GD</StyledTd>
-        <StyledTd>P</StyledTd>
+        <tr>
+          <StyledTd>Pos</StyledTd>
+          <StyledTd>Team</StyledTd>
+          <StyledTd>GP</StyledTd>
+          <StyledTd>GF/GA</StyledTd>
+          <StyledTd>GD</StyledTd>
+          <StyledTd>P</StyledTd>
+        </tr>
       </thead>
       <tbody>
         {table.map((team) => (
