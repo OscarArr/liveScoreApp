@@ -16,7 +16,7 @@ export const fetchTeamData = createAsyncThunk(
           // team_id will be dynamic 
           team_id: '2wZHnGDH'
       }})
-      console.log(teamdata.data.DATA, "teamData");
+      // console.log(teamdata.data.DATA, "teamData");
       return teamdata.data.DATA
   }
 )

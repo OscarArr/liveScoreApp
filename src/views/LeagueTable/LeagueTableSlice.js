@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import { fetchLeagueTable } from '../../api/fetchLeagueTable'
+import { getLeagueTable } from '../../api/fetchLeagueTable'
 import axios from "axios"
 import baseAxios from '../../api/config'
 
@@ -20,6 +20,17 @@ export const fetchLeagueTable = createAsyncThunk(
       return leaguetable.data.DATA[0].ROWS
   }
 )
+
+// export const fetchLeagueTable = createAsyncThunk(
+//   'table/fetchLeagueTable',
+//   async () => {
+//       const leaguetable = await getLeagueTable()
+//       console.log(leaguetable.data.DATA[0].ROWS, "slice data");
+//       console.log(getLeagueTable(), "getLeagueTable");
+//       return leaguetable.data.DATA[0].ROWS
+//   }
+// )
+
 
 // export const getLeagueTable = createAsyncThunk(
 //   'LeagueTable/getLeagueTable',
