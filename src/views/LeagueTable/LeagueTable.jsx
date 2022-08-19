@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchLeagueTable } from './LeagueTableSlice';
+import { fetchTeamData } from '../TeamView/TeamSlice';
 import TableRowComponent from './TableRowComponent';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const LeagueTableView = () => {
@@ -11,6 +13,18 @@ const LeagueTableView = () => {
   useEffect(() => {
     dispatch(fetchLeagueTable())
   }, [dispatch])
+
+  // const setTeam = (teamId) => {
+  //   console.log(teamId, "teamId")
+  //   dispatch(fetchTeamData({
+  //     params: {
+  //       locale: 'en_GB',
+  //       sport_id: '1',
+  //       // team_id will be dynamic 
+  //       team_id: teamId
+  //     }
+  //   }))
+  // }
 
   const StyledTd = styled.td`
     border-left: 1px solid black;

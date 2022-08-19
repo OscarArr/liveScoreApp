@@ -1,9 +1,26 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom';
+import { fetchTeamData } from '../TeamView/TeamSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const TableRowComponent = ({ teamProp }) => {
 
+  const dispatch = useDispatch()
+
   const goalDifference = () => {
     return ( teamProp.GOALS.split(":")[0] - teamProp.GOALS.split(":")[1] )
+  }
+
+  const setTeam = (teamId) => {
+    console.log(teamId, "teamId")
+    dispatch(fetchTeamData({
+      params: {
+        locale: 'en_GB',
+        sport_id: '1',
+        // team_id will be dynamic 
+        team_id: teamId
+      }
+    }))
   }
 
   const StyledHeader = styled.th`
@@ -21,7 +38,10 @@ const TableRowComponent = ({ teamProp }) => {
 
 
   return (
-    <tr>
+    <tr onClick={() => setTeam(teamProp.TEAM_ID)}>
+      <StyledRow>
+        <Link to="/team">GO TO TEAM</Link>
+      </StyledRow>
       <StyledRow>{teamProp.RANKING}</StyledRow>
       <StyledHeader>{teamProp.TEAM_NAME}</StyledHeader>
       <StyledRow>{teamProp.MATCHES_PLAYED}</StyledRow>

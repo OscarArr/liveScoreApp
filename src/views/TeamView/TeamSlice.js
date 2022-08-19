@@ -8,14 +8,17 @@ const baseAxio = baseAxios
 // hämtar data för lag, för dynamik ändra i params. team_id för byte av liga.
 export const fetchTeamData = createAsyncThunk(
   'team/fetchTeamData',
-  async () => {
+  async (params) => {
       const teamdata = await axios.get('teams/data', 
-      {  params: {
-          locale: 'en_GB',
-          sport_id: '1',
-          // team_id will be dynamic 
-          team_id: '2wZHnGDH'
-      }})
+      
+        params
+      //   params: {
+      //     locale: 'en_GB',
+      //     sport_id: '1',
+      //     // team_id will be dynamic 
+      //     team_id: '2wZHnGDH'
+      // }
+    )
       // console.log(teamdata.data.DATA, "teamData");
       return teamdata.data.DATA
   }
@@ -35,6 +38,9 @@ export const teamSlice = createSlice({
 
   },
   extraReducers: {
+    // [fetchTeamData.pending]: (state, action) => {
+    //   return action.payload
+    // },
     [fetchTeamData.fulfilled]: (state, action) => {
       return action.payload
     }
