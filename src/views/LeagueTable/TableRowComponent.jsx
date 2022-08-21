@@ -39,11 +39,10 @@ const TableRowComponent = ({ teamProp }) => {
 
   return (
     <tr onClick={() => setTeam(teamProp.TEAM_ID)}>
-      <StyledRow>
-        <Link to="/team">GO TO TEAM</Link>
-      </StyledRow>
       <StyledRow>{teamProp.RANKING}</StyledRow>
-      <StyledHeader>{teamProp.TEAM_NAME}</StyledHeader>
+      <StyledHeader>
+        <Link to="/team">{teamProp.TEAM_NAME}</Link>
+      </StyledHeader>
       <StyledRow>{teamProp.MATCHES_PLAYED}</StyledRow>
       <StyledRow>{teamProp.GOALS}</StyledRow>
       <StyledRow>{goalDifference()}</StyledRow>
